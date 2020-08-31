@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Character from './components/Character';
+import { Container } from './styled-components/Container';
 import './App.css';
 
 const App = () => {
@@ -29,15 +30,18 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Star Wars React</h1>
-      {characters.map((characterData, index) => (
-        <Character key={index} 
-        name={characterData.name} 
-        eyes={characterData.eye_color} 
-        hair={characterData.hair_color} 
-        height={characterData.height} 
-        // homeworld={characterData.homeworld}
-        />
-      ))}
+      <Container>
+        {characters.map((characterData, index) => (
+          <Character
+            key={index}
+            name={characterData.name}
+            eyes={characterData.eye_color}
+            hair={characterData.hair_color}
+            height={characterData.height}
+            // homeworld={characterData.homeworld}
+          />
+        ))}
+      </Container>
     </div>
   );
 }
