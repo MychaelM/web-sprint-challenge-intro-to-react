@@ -28,9 +28,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">Star Wars React</h1>
       {characters.map((characterData, index) => (
-        <Character key={index} name={characterData.name} />
+        <Character key={index} 
+        name={characterData.name} 
+        eyes={characterData.eye_color} 
+        hair={characterData.hair_color} 
+        height={characterData.height} 
+        // homeworld={characterData.homeworld}
+        />
       ))}
     </div>
   );
